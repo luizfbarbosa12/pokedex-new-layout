@@ -16,18 +16,6 @@ const Home = (props) => {
   }, []);
 
   return (
-    <>
-      <Header
-      setCurrentPage={props.setCurrentPage}
-        idFilter={idFilter}
-        setIdFilter={setIdFilter}
-        pesquisa={pesquisa}
-        setPesquisa={setPesquisa}
-        typeFilter={typeFilter}
-        setTypeFilter={setTypeFilter}
-        order={order}
-        setOrder={setOrder}
-      />
       <CardsContainer>
         {states.pokemons && states.pokemons
         //   .filter((pokemon) => {
@@ -57,7 +45,6 @@ const Home = (props) => {
             );
           })}
       </CardsContainer>
-    </>
   );
 };
 
