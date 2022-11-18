@@ -73,3 +73,11 @@ top: -60px;
 right: 0;
 z-index: 2;
 `
+
+export const DetailsButton = styled.p`
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`
