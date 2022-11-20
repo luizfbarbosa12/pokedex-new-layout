@@ -4,17 +4,16 @@ import { GlobalContext } from "../../Global/GlobalContext";
 import { CardsContainer } from "../../pages/Home/style";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
 const Pokedex = () => {
-  const { pokedex } = useContext(GlobalContext);
+  const { states } = useContext(GlobalContext);
 
-  console.log(pokedex)
   return (
     <>
       <Header showButton />
       <CardsContainer>
-        {/* {pokedex &&
-          pokedex.map((pokemon) => {
+        {states.pokedex ?
+          states.pokedex.map((pokemon) => {
             return <PokemonCard key={pokemon.name} pokemon={pokemon} />;
-          })} */}
+          }) : "Não tem nenhum pokemon aqui"}
       </CardsContainer>
     </>
   );

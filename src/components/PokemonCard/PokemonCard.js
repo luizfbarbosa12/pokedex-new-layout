@@ -18,7 +18,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const PokemonCard = (props) => {
-  const { states } = useContext(GlobalContext);
+  const { actions } = useContext(GlobalContext);
   const [pokemon, setPokemon] = useState();
   const navigate = useNavigate();
   useEffect(() => {
@@ -55,7 +55,7 @@ const PokemonCard = (props) => {
           src={pokemon?.sprites.other["official-artwork"].front_default}
           alt=""
         />
-        <CatchButton>Capturar!</CatchButton>
+        <CatchButton onClick={() => actions.addToPokedex(pokemon)}>Capturar!</CatchButton>
       </div>
       <Pokeball src={pokeball} alt="pokeball" />
     </Container>

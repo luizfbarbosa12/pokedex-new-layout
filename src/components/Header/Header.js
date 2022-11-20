@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Container, PokedexButton, AllPokemon, RemoveFromPokedex } from "./styles";
 import pokemonLogo from '../../assets/pokemon-logo.png'
 import {  useNavigate } from "react-router-dom";
+import { GlobalContext } from "../../Global/GlobalContext";
 
 const Header = (props) => {
   const navigate = useNavigate()
+  const {actions} = useContext(GlobalContext)
   // const pokemontypesArray = [
   //   "Normal",
   //   "Fire",
@@ -83,7 +85,7 @@ const goToPokedex = () => {
         })}
       </select> */}
       <img src={pokemonLogo} alt="Pokemon Logo" />
-      {props.remove ? <RemoveFromPokedex>Excluir da Pokédex</RemoveFromPokedex> :  <PokedexButton onClick={goToPokedex}>Pokédex</PokedexButton>}
+      {props.remove ? <RemoveFromPokedex onClick={actions.removePokemon}>Excluir da Pokédex</RemoveFromPokedex> :  <PokedexButton onClick={goToPokedex}>Pokédex</PokedexButton>}
      
     </Container>
   );

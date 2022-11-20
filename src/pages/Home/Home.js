@@ -12,7 +12,9 @@ const Home = (props) => {
   const [order, setOrder] = useState("");
 
   useEffect(() => {
-    requests.getAllPokemon();
+    if(states.pokedex.length === 0) {
+      requests.getAllPokemon();
+    }
   }, []);
 
 
