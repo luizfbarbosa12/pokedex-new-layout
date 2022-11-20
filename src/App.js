@@ -4,7 +4,6 @@ import GlobalState from "./Global/GlobalState";
 import Router from './Router/Router';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home')
 
   
   return (

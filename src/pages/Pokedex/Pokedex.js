@@ -1,9 +1,23 @@
-import React from 'react'
-
+import React, { useContext } from "react";
+import Header from "../../components/Header/Header";
+import { GlobalContext } from "../../Global/GlobalContext";
+import { CardsContainer } from "../../pages/Home/style";
+import PokemonCard from "../../components/PokemonCard/PokemonCard";
 const Pokedex = () => {
-  return (
-    <div>Pokedex</div>
-  )
-}
+  const { pokedex } = useContext(GlobalContext);
 
-export default Pokedex
+  console.log(pokedex)
+  return (
+    <>
+      <Header showButton />
+      <CardsContainer>
+        {/* {pokedex &&
+          pokedex.map((pokemon) => {
+            return <PokemonCard key={pokemon.name} pokemon={pokemon} />;
+          })} */}
+      </CardsContainer>
+    </>
+  );
+};
+
+export default Pokedex;

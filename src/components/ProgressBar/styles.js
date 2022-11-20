@@ -1,11 +1,10 @@
 import styled from 'styled-components'
 
 export const ProgressBar = styled.div`
-    background: linear-gradient(to left, #F2709C, #FF9472);
+    background-color: #232323;
     border-radius: 20px;
     height: 15px;
-    width: 70px;
-    transition: all ease 0.5s;
+    width: 150px;
 `
 
 export const ProgressDone = styled.div`
@@ -16,6 +15,6 @@ export const ProgressDone = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all ease 0.5s;
+    transition: all ease 0.3s;
     color: #232323;
 `

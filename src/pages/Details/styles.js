@@ -42,7 +42,7 @@ export const PokemonBack = styled.div`
 
 export const BaseStatsContainer = styled.div`
   min-height: min-content;
-  width: max-content;
+  width: 450px;
   border-radius: 12px;
   background-color: #ffffff;
   padding: 16px;
@@ -86,6 +86,7 @@ export const PokemonPicture = styled.img`
 `;
 export const AnimatedPokemonFront = styled.img`
   height: 12vh;
+  cursor: pointer;
 `;
 
 export const StatName = styled.p`
@@ -94,6 +95,7 @@ export const StatName = styled.p`
   color: #5e5e5e;
 `;
 export const StatBarContainer = styled.div`
+  width: 300px;
   display: flex;
   gap: 8px;
   justify-content: space-between;

@@ -5,7 +5,7 @@ export const Container = styled.header`
     gap: 16px;
     padding: 16px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 `
 
 export const PokedexButton = styled.button`
@@ -18,4 +18,13 @@ export const PokedexButton = styled.button`
     font-size: 24px;
     color: white;
     font-weight: 700;
+`
+export const AllPokemon = styled.div`
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+`
+
+export const RemoveFromPokedex = styled(PokedexButton)`
+    background-color: #FF6262;
 `

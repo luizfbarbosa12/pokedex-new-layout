@@ -39,7 +39,7 @@ const PokemonCard = (props) => {
   return (
     <Container color={getColors(pokemon?.types[0].type.name)}>
       <div>
-        <PokemonNumber>{pokemon?.id}</PokemonNumber>
+        <PokemonNumber>#{pokemon?.id}</PokemonNumber>
         <PokemonName>{pokemon?.name}</PokemonName>
         <TypesContainer>
           {pokemon?.types.map((type, index) => {

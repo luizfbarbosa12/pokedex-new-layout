@@ -1,7 +1,10 @@
 import React from "react";
-import { Container, PokedexButton } from "./styles";
+import { Container, PokedexButton, AllPokemon, RemoveFromPokedex } from "./styles";
 import pokemonLogo from '../../assets/pokemon-logo.png'
+import {  useNavigate } from "react-router-dom";
+
 const Header = (props) => {
+  const navigate = useNavigate()
   // const pokemontypesArray = [
   //   "Normal",
   //   "Fire",
@@ -34,9 +37,19 @@ const Header = (props) => {
   // const handleIdSearch = (e) => {
   //   props.setIdFilter(e.target.value);
   // };
+
+
+const goToHomePage = () => {
+  navigate('/')
+}
+
+const goToPokedex = () => {
+  navigate('/pokedex')
+}
   return (
     <Container>
-      <div></div>
+      {props.showButton && <AllPokemon onClick={goToHomePage}>Todos os Pokémons</AllPokemon>}
+      
         {/* <input
         type="number"
         placeholder="Buscar por id"
@@ -70,7 +83,8 @@ const Header = (props) => {
         })}
       </select> */}
       <img src={pokemonLogo} alt="Pokemon Logo" />
-      <PokedexButton onClick={() => props.setCurrentPage("pokedex")}>Pokédex</PokedexButton>
+      {props.remove ? <RemoveFromPokedex>Excluir da Pokédex</RemoveFromPokedex> :  <PokedexButton onClick={goToPokedex}>Pokédex</PokedexButton>}
+     
     </Container>
   );
 };

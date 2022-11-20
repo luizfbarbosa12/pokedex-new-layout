@@ -16,7 +16,7 @@ export const Progress = ({done}) => {
 
 
     return (
-        <ProgressBar style={style}>
+        <ProgressBar>
             <ProgressDone style={style}>
             {done}
             </ProgressDone>

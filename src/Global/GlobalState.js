@@ -6,7 +6,7 @@ const GlobalState = (props) => {
     const [pokemons, setPokemons] = useState([])
 
     const getAllPokemon = () => {
-        axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=30`)
+        axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151`)
         .then((res) => {
             setPokemons(res.data.results)
         }).catch((err) => {
