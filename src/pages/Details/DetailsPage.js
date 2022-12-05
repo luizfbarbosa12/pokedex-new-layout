@@ -49,7 +49,7 @@ const DetailsPage = (props) => {
 
   return (
     <>
-    <Header showButton remove/>
+    <Header showButton remove currentPokemon={pokemonDetails}/>
       <Container>
         <h1>Detalhes</h1>
         <DetailsContainer color={getColors(pokemonDetails?.types[0].type.name)}>

@@ -6,3 +6,15 @@ export const CardsContainer = styled.div`
   justify-items: center;
   background-color: #5e5e5e;
 `;
+
+export const PaginationContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1rem;
+  
+`
+
+export const GenerationSelect = styled.select`
+  width: 150px;
+  height: 30px;
+`

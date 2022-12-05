@@ -65,14 +65,19 @@ export const CatchButton = styled.button`
   color: #000;
 `;
 
+export const RemovePokemonButton = styled(CatchButton)`
+  background: #FF6262;
+  color: #fff;
+`;
+
 export const Pokemon = styled.img`
-width: 193px;
-height: 193px;
-position: absolute;
-top: -60px;
-right: 0;
-z-index: 2;
-`
+  width: 193px;
+  height: 193px;
+  position: absolute;
+  top: -60px;
+  right: 0;
+  z-index: 2;
+`;
 
 export const DetailsButton = styled.p`
   cursor: pointer;
@@ -80,4 +85,4 @@ export const DetailsButton = styled.p`
   &:hover {
     text-decoration: underline;
   }
-`
+`;
