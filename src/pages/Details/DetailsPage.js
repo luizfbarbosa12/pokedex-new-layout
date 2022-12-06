@@ -15,11 +15,13 @@ import {
   MoveTag,
   PokemonSpritesContainer,
   SpritesStatsGrid,
+  DetailsTitle,
+  MovesAndDataContainer
 } from "./styles";
 import { getTypes } from "../../utils/ReturnPokemonType";
 import { getColors } from "../../utils/ReturnCardColor";
 import pokeball from "../../assets/pokeball-big.png";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import Progress from "../../components/ProgressBar/ProgressBar";
 import {
@@ -51,7 +53,7 @@ const DetailsPage = (props) => {
     <>
     <Header showButton remove currentPokemon={pokemonDetails}/>
       <Container>
-        <h1>Detalhes</h1>
+        <DetailsTitle>Detalhes</DetailsTitle>
         <DetailsContainer color={getColors(pokemonDetails?.types[0].type.name)}>
           <SpritesStatsGrid>
             <PokemonSpritesContainer>
@@ -95,7 +97,7 @@ const DetailsPage = (props) => {
               })}
             </BaseStatsContainer>
           </SpritesStatsGrid>
-          <div>
+          <MovesAndDataContainer>
             <PokemonDataContainer>
               <PokemonNumber>#{pokemonDetails?.id}</PokemonNumber>
               <PokemonName>{pokemonDetails?.name}</PokemonName>
@@ -116,7 +118,7 @@ const DetailsPage = (props) => {
                 return <MoveTag key={index}>{move.move.name}</MoveTag>;
               })}
             </MovesContainer>
-          </div>
+          </MovesAndDataContainer>
           <PokemonPicture
             src={
               pokemonDetails?.sprites.other["official-artwork"].front_default

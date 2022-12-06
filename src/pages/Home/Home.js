@@ -1,9 +1,10 @@
 import React, { useEffect, useContext } from "react";
 import Header from "../../components/Header/Header";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
-import { CardsContainer, PaginationContainer, GenerationSelect } from "./style";
+import { CardsContainer, PaginationContainer, GenerationSelect, SearchInput } from "./style";
 import { GlobalContext } from "../../Global/GlobalContext";
 import useForm from "../../hooks/useForm";
+import { Toaster } from 'react-hot-toast';
 
 const Home = (props) => {
   const { requests, states, setters } = useContext(GlobalContext);
@@ -22,6 +23,7 @@ const Home = (props) => {
  
   return (
     <>
+    <Toaster />
       <Header />
       <PaginationContainer>
           <GenerationSelect onChange={selectGen}>
@@ -34,18 +36,18 @@ const Home = (props) => {
             <option value={'gen 7'}>Gen 7</option>
             <option value={'gen 8'}>Gen 8</option>
           </GenerationSelect>
-      <input
+      <SearchInput
         type="text"
         placeholder="Buscar por nome"
         onChange={onChange}
         value={form.query}
         name="query"
       />
-      <select onChange={onChange} value={form.order} name="order">
+      <GenerationSelect onChange={onChange} value={form.order} name="order">
         <option value="">Selecione uma ordem</option>
         <option value="cres">Ordem alfabética</option>
         <option value="desc">Ordem Alfabética Invertida</option>
-      </select>
+      </GenerationSelect>
         </PaginationContainer>
       <CardsContainer>
         {states.pokemons &&

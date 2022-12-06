@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { GlobalContext } from "./GlobalContext";
 import axios from "axios";
+import toast, { Toaster } from 'react-hot-toast';
 
 const GlobalState = (props) => {
   const [pokemons, setPokemons] = useState([]);
@@ -58,6 +59,8 @@ const GlobalState = (props) => {
   };
 
   
+  const notify = (message) => toast(message);
+
   const getAllPokemon = () => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/?offset=${returnPokemonGens().start}&limit=${returnPokemonGens().end}`)
@@ -81,8 +84,9 @@ const GlobalState = (props) => {
       });
 
       setPokemons(newPokemons);
+      notify(`${pokemonToAdd.name.charAt(0).toUpperCase() + pokemonToAdd.name.slice(1)} foi adicionado na pokedex`)
     } else {
-      alert("Esse pokemon já está na pokedex");
+      notify("Este pokemon já está na pokedex")
     }
   };
 
@@ -98,9 +102,9 @@ const GlobalState = (props) => {
 
       setPokemons(newPokemons);
       pokedex.splice(indexPokemon, 1);
-      alert(`${pokemonToRemove.name} foi removido da pokedex!!!`);
+      notify(`${pokemonToRemove.name.charAt(0).toUpperCase() + pokemonToRemove.name.slice(1)} foi removido da pokedex!!!`)
     } else {
-      alert(`${pokemonToRemove.name} já foi removido da pokedex.`);
+      notify(`${pokemonToRemove.name.charAt(0).toUpperCase() + pokemonToRemove.name.slice(1)} já foi removido da pokedex.`);
     }
   };
 

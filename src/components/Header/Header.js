@@ -4,6 +4,7 @@ import {
   PokedexButton,
   AllPokemon,
   RemoveFromPokedex,
+  PokemonLogo
 } from "./styles";
 import pokemonLogo from "../../assets/pokemon-logo.png";
 import { useNavigate } from "react-router-dom";
@@ -26,7 +27,7 @@ const Header = (props) => {
         <AllPokemon onClick={goToHomePage}>Todos os Pokémons</AllPokemon>
       )}
 
-      <img src={pokemonLogo} alt="Pokemon Logo" />
+      <PokemonLogo src={pokemonLogo} alt="Pokemon Logo" />
       {props.remove ? (
         <RemoveFromPokedex
           onClick={() => actions.removePokemon(props.currentPokemon)}
